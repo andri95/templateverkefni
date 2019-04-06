@@ -1,0 +1,42 @@
+html{
+	background: url(https://i.imgur.com/lhZoAOv.jpg) bottom center;
+	background-size: cover;
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.temp{
+	display: flex;
+	flex: 1;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.spurning, .svar{
+	border: .4rem solid black;
+	border-radius: .5rem;
+	margin: 1rem;
+	font-size: 1.5rem;
+	padding: 1rem .5rem;
+	transition: all background .07s ease;
+	width: 10rem;
+	text-align: center;
+	color: white;
+	background: rgba(0,0,0,0.4);
+	text-shadow: 0 0 .5rem black;
+}
+
+.vitlaust{
+	transform: scale(1.1);
+	background: rgba(242, 38, 19, 0.4);
+}
+
+.rett{
+	transform: scale(1.1);
+	background: rgba(30, 130, 76, 0.4);
+}
