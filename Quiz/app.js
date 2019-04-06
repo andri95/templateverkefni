@@ -1,4 +1,5 @@
 
+
 class Spurningar{
 	constructor(spurningar, svor, rett){
 		this._spurningar = spurningar;
@@ -14,23 +15,42 @@ let spurningarTemp = [spurningEitt, spurningTvo];
 
 let rettSvar = spurningarTemp[0]._rett;
 
-const markup = 
-		`<div class="temp">
+const markup1 = 
+		`<section class="temp">
 		<div class="spurning">${spurningarTemp[0]._spurningar}</div>
 		<div class="svar">${spurningarTemp[0]._svor[0]}</div>
 		<div class="svar">${spurningarTemp[0]._svor[1]}</div>
 		<div class="svar">${spurningarTemp[0]._svor[2]}</div>
 		<div class="svar">${spurningarTemp[0]._svor[3]}</div>
-		</div>`;
+		</section>`;
 
-document.body.innerHTML = markup;
+const markup2 = 
+		`<section class="temp">
+		<div class="spurning">${spurningarTemp[1]._spurningar}</div>
+		<div class="svar">${spurningarTemp[1]._svor[0]}</div>
+		<div class="svar">${spurningarTemp[1]._svor[1]}</div>
+		</section>`;
+
+document.body.innerHTML = markup1;
 
 const spurn = document.querySelectorAll('.svar');
 
-function toggleYta(e){
-	/*const prufa = document.querySelector(`div[data-key="${spurningarTemp[0]._rett}"]`);*/
-	if(this.$ == spurningarTemp[0]._rett){
+function toggleYtaTveir(e){
+	if(this.innerHTML == spurningarTemp[1]._rett){
 		this.classList.toggle('rett');
+	} else{
+		this.classList.toggle('vitlaust');
+	}
+}
+
+function toggleYta(e){
+	if(this.innerHTML == spurningarTemp[0]._rett){
+		this.classList.toggle('rett');
+
+		document.body.innerHTML = markup2;
+		const spurn = document.querySelectorAll('.svar');
+		spurn.forEach(svar => svar.addEventListener('click', toggleYtaTveir));
+
 	} else{
 		this.classList.toggle('vitlaust');
 	}
